@@ -7,11 +7,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/childRescue")
-  .then(() => console.log("MongoDB Connected"));
+/* ✅ CONNECT TO MONGODB ATLAS */
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log(err));
 
+/* Routes */
 app.use("/api/reports", require("./routes/reportRoutes"));
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+/* ✅ IMPORTANT: PORT FOR RENDER */
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
