@@ -7,7 +7,7 @@ document.getElementById("reportForm").addEventListener("submit", async function 
     details: this[2].value
   };
 
-  const res = await fetch("http://localhost:5000/api/reports", {
+  const res = await fetch("https://orphanage-project-1.onrender.com/api/reports", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
