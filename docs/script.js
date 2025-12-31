@@ -20,6 +20,38 @@
 //   }
 // });
 
+// const form = document.getElementById("reportForm");
+// const message = document.getElementById("message");
+
+// form.addEventListener("submit", async (e) => {
+//   e.preventDefault();
+
+//   const data = {
+//     name: document.getElementById("name").value,
+//     location: document.getElementById("location").value,
+//     details: document.getElementById("details").value
+//   };
+
+//   try {
+//     const res = await fetch(
+//       "https://orphanage-project-1.onrender.com/api/reports",
+//       {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(data)
+//       }
+//     );
+
+//     if (res.ok) {
+//       message.innerHTML = "<span class='text-success fw-bold'>✅ Report submitted successfully!</span>";
+//       form.reset();
+//     } else {
+//       message.innerHTML = "<span class='text-danger'>❌ Failed to submit report</span>";
+//     }
+//   } catch (err) {
+//     message.innerHTML = "<span class='text-danger'>❌ Server error</span>";
+//   }
+// });
 const form = document.getElementById("reportForm");
 const message = document.getElementById("message");
 
@@ -27,9 +59,9 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = {
-    name: document.getElementById("name").value,
-    location: document.getElementById("location").value,
-    details: document.getElementById("details").value
+    name: name.value,
+    location: location.value,
+    details: details.value
   };
 
   try {
@@ -43,12 +75,15 @@ form.addEventListener("submit", async (e) => {
     );
 
     if (res.ok) {
-      message.innerHTML = "<span class='text-success fw-bold'>✅ Report submitted successfully!</span>";
+      message.innerHTML = "✅ Report submitted successfully";
+      message.style.color = "green";
       form.reset();
     } else {
-      message.innerHTML = "<span class='text-danger'>❌ Failed to submit report</span>";
+      message.innerHTML = "❌ Submission failed";
+      message.style.color = "red";
     }
-  } catch (err) {
-    message.innerHTML = "<span class='text-danger'>❌ Server error</span>";
+  } catch {
+    message.innerHTML = "❌ Server error";
+    message.style.color = "red";
   }
 });

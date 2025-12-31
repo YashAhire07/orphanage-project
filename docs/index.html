@@ -2,63 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Child Rescue & Orphanage Support</title>
+  <title>Home For All – Child Rescue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark shadow">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
-    <span class="navbar-brand fw-bold">👶 Child Rescue System</span>
+    <a class="navbar-brand fw-bold text-primary">Home For All</a>
   </div>
 </nav>
 
-<header class="hero-section text-center text-white">
-  <div class="container">
-    <h1 class="fw-bold">Help a Child in Need</h1>
-    <p class="lead">Report child rescue cases securely & instantly</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container text-center text-white">
+    <h1 class="fw-bold">Safe Hands For Every Child</h1>
+    <p class="lead">Together we can protect, rescue & support children</p>
+    <a href="#report" class="btn btn-light btn-lg mt-3">Report a Case</a>
   </div>
-</header>
+</section>
 
+<!-- ABOUT -->
 <section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow-lg p-4">
-        <h3 class="text-center mb-4">Rescue Report Form</h3>
-
-        <form id="reportForm">
-          <div class="mb-3">
-            <label class="form-label">Child Name</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Location</label>
-            <input type="text" class="form-control" id="location" required>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Details</label>
-            <textarea class="form-control" id="details" rows="3" required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary w-100">
-            Submit Report
-          </button>
-        </form>
-
-        <div id="message" class="text-center mt-3"></div>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="card p-4 shadow-sm">
+        <h5>Protection</h5>
+        <p>Ensuring safety and care for vulnerable children</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-4 shadow-sm">
+        <h5>Rescue</h5>
+        <p>Immediate action for children in danger</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-4 shadow-sm">
+        <h5>Support</h5>
+        <p>Long‑term care and rehabilitation</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- REPORT FORM -->
+<section id="report" class="bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4 shadow">
+          <h3 class="text-center mb-3">Report Child Rescue Case</h3>
+
+          <form id="reportForm">
+            <input class="form-control mb-3" id="name" placeholder="Child Name" required>
+            <input class="form-control mb-3" id="location" placeholder="Location" required>
+            <textarea class="form-control mb-3" id="details" placeholder="Details" rows="3" required></textarea>
+            <button class="btn btn-primary w-100">Submit Report</button>
+          </form>
+
+          <p id="message" class="text-center mt-3"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="bg-dark text-white text-center py-3">
-  © 2025 Child Rescue Project | Developed by Yash Ahire
+  © 2025 Home For All | Child Rescue System
 </footer>
 
 <script src="script.js"></script>
