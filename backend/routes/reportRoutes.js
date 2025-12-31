@@ -1,24 +1,8 @@
-// const express = require("express");
-// const router = express.Router();
-// const Report = require("../models/Report");
+const express = require("express");
+const router = express.Router();   // ✅ THIS WAS MISSING
+const Report = require("../models/Report");
 
-// router.post("/", async (req, res) => {
-//   try {
-//     await Report.create(req.body);
-//     res.status(201).json({ message: "Report saved" });
-//   } catch (err) {
-//     res.status(500).json({ error: "Server error" });
-//   }
-// });
-
-// router.get("/", async (req, res) => {
-//   console.log("hello");
-  
-//     const reports = await Report.find();
-//   res.json(reports);
-// });
-
-// module.exports = router;
+// POST: create report
 router.post("/", async (req, res) => {
   const { name, location, details } = req.body;
 
@@ -34,3 +18,15 @@ router.post("/", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
+// GET: fetch all reports
+router.get("/", async (req, res) => {
+  try {
+    const reports = await Report.find().sort({ createdAt: -1 });
+    res.json(reports);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+module.exports = router;
