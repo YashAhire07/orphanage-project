@@ -1,13 +1,24 @@
 const mongoose = require("mongoose");
 
-const reportSchema = new mongoose.Schema({
-  name: String,
-  location: String,
-  details: String,
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
-});
+const reportSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    location: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    details: {
+      type: String,
+      required: true,
+      trim: true
+    }
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Report", reportSchema);
