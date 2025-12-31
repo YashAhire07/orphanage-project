@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Child Rescue Website</title>
+  <meta charset="UTF-8" />
+  <title>Child Rescue & Orphanage Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Child Rescue & Protection</h1>
+<nav class="navbar navbar-dark bg-dark shadow">
+  <div class="container">
+    <span class="navbar-brand fw-bold">👶 Child Rescue System</span>
+  </div>
+</nav>
 
-<form id="reportForm">
-  <input type="text" placeholder="Your Name" required>
-  <input type="text" placeholder="Location" required>
-  <textarea placeholder="Describe the issue" required></textarea>
-  <button type="submit">Submit Report</button>
-</form>
+<header class="hero-section text-center text-white">
+  <div class="container">
+    <h1 class="fw-bold">Help a Child in Need</h1>
+    <p class="lead">Report child rescue cases securely & instantly</p>
+  </div>
+</header>
 
-<p id="message"></p>
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4">
+        <h3 class="text-center mb-4">Rescue Report Form</h3>
+
+        <form id="reportForm">
+          <div class="mb-3">
+            <label class="form-label">Child Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Details</label>
+            <textarea class="form-control" id="details" rows="3" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            Submit Report
+          </button>
+        </form>
+
+        <div id="message" class="text-center mt-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-3">
+  © 2025 Child Rescue Project | Developed by Yash Ahire
+</footer>
 
 <script src="script.js"></script>
 </body>
