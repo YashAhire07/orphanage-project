@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Home For All – Child Rescue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,39 +12,39 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow">
   <div class="container">
-    <a class="navbar-brand fw-bold text-primary">Home For All</a>
+    <a class="navbar-brand fw-bold text-info">Home For All</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container text-center text-white">
-    <h1 class="fw-bold">Safe Hands For Every Child</h1>
-    <p class="lead">Together we can protect, rescue & support children</p>
-    <a href="#report" class="btn btn-light btn-lg mt-3">Report a Case</a>
+<!-- HERO SECTION -->
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="fw-bold text-white">Safe Hands For Every Child</h1>
+    <p class="lead text-secondary">Rescue • Protect • Support</p>
+    <a href="#report" class="btn btn-info btn-lg mt-3">Report a Case</a>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- INFO CARDS -->
 <section class="container my-5">
-  <div class="row text-center">
+  <div class="row g-4 text-center">
     <div class="col-md-4">
-      <div class="card p-4 shadow-sm">
-        <h5>Protection</h5>
-        <p>Ensuring safety and care for vulnerable children</p>
+      <div class="dark-card">
+        <h5 class="text-info">Protection</h5>
+        <p>Ensuring safety and dignity for every child</p>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card p-4 shadow-sm">
-        <h5>Rescue</h5>
-        <p>Immediate action for children in danger</p>
+      <div class="dark-card">
+        <h5 class="text-info">Rescue</h5>
+        <p>Quick response for children in danger</p>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card p-4 shadow-sm">
-        <h5>Support</h5>
+      <div class="dark-card">
+        <h5 class="text-info">Support</h5>
         <p>Long‑term care and rehabilitation</p>
       </div>
     </div>
@@ -52,18 +52,19 @@
 </section>
 
 <!-- REPORT FORM -->
-<section id="report" class="bg-light py-5">
+<section id="report" class="report-section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card p-4 shadow">
-          <h3 class="text-center mb-3">Report Child Rescue Case</h3>
+        <div class="dark-card p-4">
+          <h3 class="text-center text-info mb-3">Report Child Rescue Case</h3>
 
           <form id="reportForm">
-            <input class="form-control mb-3" id="name" placeholder="Child Name" required>
-            <input class="form-control mb-3" id="location" placeholder="Location" required>
-            <textarea class="form-control mb-3" id="details" placeholder="Details" rows="3" required></textarea>
-            <button class="btn btn-primary w-100">Submit Report</button>
+            <input class="form-control mb-3 dark-input" id="name" placeholder="Child Name" required>
+            <input class="form-control mb-3 dark-input" id="location" placeholder="Location" required>
+            <textarea class="form-control mb-3 dark-input" id="details" placeholder="Details" rows="3" required></textarea>
+
+            <button class="btn btn-info w-100">Submit Report</button>
           </form>
 
           <p id="message" class="text-center mt-3"></p>
@@ -74,8 +75,8 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white text-center py-3">
-  © 2025 Home For All | Child Rescue System
+<footer class="footer text-center">
+  © 2025 Home For All | Child Rescue Project
 </footer>
 
 <script src="script.js"></script>

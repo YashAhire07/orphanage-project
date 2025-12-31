@@ -45,7 +45,8 @@ button {
 
 footer {
   font-size: 14px;
-} */
+/* } 
+*
 body {
   padding-top: 70px;
   font-family: "Segoe UI", sans-serif;
@@ -65,5 +66,54 @@ body {
 }
 
 footer {
+  font-size: 14px;
+} */
+body {
+  background-color: #0b0f19;
+  color: #cbd5e1;
+  padding-top: 70px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.hero {
+  padding: 120px 20px;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+}
+
+.dark-card {
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 30px;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.dark-card:hover {
+  transform: translateY(-6px);
+}
+
+.report-section {
+  background-color: #020617;
+  padding: 70px 0;
+}
+
+.dark-input {
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.dark-input:focus {
+  background-color: #020617;
+  color: #fff;
+  border-color: #38bdf8;
+  box-shadow: none;
+}
+
+.footer {
+  background-color: #000;
+  color: #94a3b8;
+  padding: 15px;
   font-size: 14px;
 }
