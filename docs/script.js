@@ -48,3 +48,9 @@ form.addEventListener("submit", async (e) => {
     message.style.color = "red";
   }
 });
+document.getElementById("themeToggle").onclick = () => {
+  document.body.classList.toggle("dark");
+};
+document.getElementById("menuToggle").onclick = () => {
+  document.getElementById("navLinks").classList.toggle("show");
+};

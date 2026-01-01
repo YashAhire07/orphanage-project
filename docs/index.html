@@ -9,42 +9,249 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-info">Home For All</a>
+<header class="navbar">
+  <div class="logo">
+    <img src="house.png" alt="Home For All Logo">
+    <span>Home For All</span>
   </div>
-</nav>
 
+  <nav id="home-for-all">
+    <a href="#home">Home</a>
+    <a href="#about-us">About Us</a>
+    <a href="#how-we-help">How We Help</a>
+    <a href="#orphanages">Orphanages</a>
+    <a href="#contact-us">Contact Us</a>
+    
+  </nav>
+
+  <button id="home-for-all" class="signup-btn">Sign Up</button>
+  <!--<button id="themeToggle" class="theme-toggle">🌙</button>
+-->
+<body>
+  
+</header>
 <!-- HERO SECTION -->
-<section class="hero text-center">
-  <div class="container">
-    <h1 class="fw-bold text-white">Safe Hands For Every Child</h1>
-    <p class="lead text-secondary">Rescue • Protect • Support</p>
-    <a href="#report" class="btn btn-info btn-lg mt-3">Report a Case</a>
+
+
+<section id="home" class="hero-section">
+  <div class="hero-overlay">
+
+    <h1 id="home-for-all">Every Child Deserves a Home</h1>
+
+    <p>
+      Join our mission to rescue orphaned children from the streets and
+      connect them with loving orphanages. Together, we can give every
+      child the safety, care, and hope they deserve.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#report" class="btn-primary">Register an Orphan Child</a>
+      <a href="#about-us" class="btn-secondary">Learn More</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><h3>500+</h3><span>Children Rescued</span></div>
+      <div><h3>50+</h3><span>Partner Orphanages</span></div>
+      <div><h3>1000+</h3><span>Volunteers</span></div>
+    </div>
+
   </div>
 </section>
+
+
+<!--About us-->
+<section id="about-us" class="about-section">
+  <div class="about-container">
+
+    <!-- LEFT SIDE TEXT -->
+    <div class="about-text">
+      <span class="about-tag">WHO WE ARE</span>
+      <h2 id="home-for-all">Our Mission</h2>
+
+      <p>
+        At <strong>Home For All</strong>, we believe that every child deserves
+        safety, love, and a place to call home.
+      </p>
+
+      <p>
+        Our mission is to bridge the gap between vulnerable children and
+        verified orphanages that can provide proper care and rehabilitation.
+      </p>
+
+      <p>
+        Through our secure platform, citizens can report orphaned children,
+        ensuring quick and verified responses.
+      </p>
+
+      <!-- INFO CARDS -->
+      <div class="about-cards">
+        <div class="info-card">
+          <h4 id="home-for-all">Safety First</h4>
+          <p>Verified handover process</p>
+        </div>
+        <div class="info-card">
+          <h4 id="home-for-all">Transparency</h4>
+          <p>Track every rescue</p>
+        </div>
+        <div class="info-card">
+          <h4 id="home-for-all">Community</h4>
+          <p>Powered by volunteers</p>
+        </div>
+        <div class="info-card">
+          <h4 id="home-for-all">Hope</h4>
+          <p>Brighter futures</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="about-image">
+      <img src="AdobeStock_1597781239_Preview.jpeg" alt="Happy child">
+      <div class="experience-badge">
+        <h3>15+</h3>
+        <span>Years of service</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--how we help-->
+<section id="how-we-help" class="help-section">
+
+  <div class="help-header">
+    <span class="help-tag">WHAT WE DO</span>
+    <h2 id="home-for-all">How We Help Orphans</h2>
+    <p>
+      From initial rescue to long-term rehabilitation, we provide
+      comprehensive support to ensure every child finds their path
+      to a brighter future.
+    </p>
+  </div>
+
+  <div class="help-cards">
+
+    <div class="help-card">
+      <h3>Reporting & Rescue Support</h3>
+      <p>
+        Our secure platform allows verified citizens to report orphaned
+        children. Each report triggers immediate rescue coordination.
+      </p>
+    </div>
+
+    <div class="help-card">
+      <h3>Health & Safety Assistance</h3>
+      <p>
+        Every rescued child receives medical attention, nutrition,
+        hygiene care, and psychological support.
+      </p>
+    </div>
+
+    <div class="help-card">
+      <h3>Orphanage Connectivity</h3>
+      <p>
+        We connect rescued children with verified orphanages through
+        safe and trusted handover processes.
+      </p>
+    </div>
+
+    <div class="help-card">
+      <h3>Long-term Rehabilitation</h3>
+      <p>
+        We support education, skill development, and emotional
+        well-being for a better future.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!--orphanages-->
+<section id="orphanages" class="orphanages-section">
+
+  <div class="orphanages-header">
+    <span class="orphanages-tag">OUR PARTNERS</span>
+    <h2>Verified Orphanages</h2>
+    <p>
+      We partner with verified orphanages across India to ensure every
+      rescued child finds a safe and nurturing home.
+    </p>
+  </div>
+
+  <div class="orphanages-grid">
+
+    <!-- CARD 1 -->
+    <div class="orphanage-card">
+      <h3>Sunshine Children's Home <span class="verified">Verified</span></h3>
+      <p class="location">📍 Mumbai, Maharashtra</p>
+      <p class="desc">
+        A loving home for children aged 3–16, providing education,
+        healthcare, and emotional support since 1995.
+      </p>
+      <p class="meta">📞 +91 98765 43210 &nbsp; ✉ info@sunshinechildren.org</p>
+      <button class="view-btn">View Details</button>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="orphanage-card">
+      <h3>Hope Foundation Orphanage <span class="verified">Verified</span></h3>
+      <p class="location">📍 Delhi, NCR</p>
+      <p class="desc">
+        Dedicated to rehabilitating street children through comprehensive
+        care programs and vocational training.
+      </p>
+      <p class="meta">📞 +91 98123 45678 &nbsp; ✉ contact@hopefoundation.in</p>
+      <button class="view-btn">View Details</button>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="orphanage-card">
+      <h3>Little Angels Care Center <span class="verified">Verified</span></h3>
+      <p class="location">📍 Bangalore, Karnataka</p>
+      <p class="desc">
+        Specialized care for infants and toddlers with focus on early
+        childhood development and adoption services.
+      </p>
+      <p class="meta">📞 +91 99876 54321 &nbsp; ✉ care@littleangels.org</p>
+      <button class="view-btn">View Details</button>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="orphanage-card">
+      <h3>Rainbow Home for Children <span class="verified">Verified</span></h3>
+      <p class="location">📍 Chennai, Tamil Nadu</p>
+      <p class="desc">
+        Providing holistic care including education, sports, arts,
+        and life‑skills training for children of all ages.
+      </p>
+      <p class="meta">📞 +91 94567 89012 &nbsp; ✉ hello@rainbowhome.org</p>
+      <button class="view-btn">View Details</button>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- INFO CARDS -->
 <section class="container my-5">
   <div class="row g-4 text-center">
     <div class="col-md-4">
       <div class="dark-card">
-        <h5 class="text-info">Protection</h5>
+        <h5 id="home-for-all">Protection</h5>
         <p>Ensuring safety and dignity for every child</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="dark-card">
-        <h5 class="text-info">Rescue</h5>
+        <h5 id="home-for-all">Rescue</h5>
         <p>Quick response for children in danger</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="dark-card">
-        <h5 class="text-info">Support</h5>
+        <h5 id="home-for-all">Support</h5>
         <p>Long‑term care and rehabilitation</p>
       </div>
     </div>
@@ -57,14 +264,14 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="dark-card p-4">
-          <h3 class="text-center text-info mb-3">Report Child Rescue Case</h3>
+          <h3 id="home-for-all" class="text-center text-">Registation Child Rescue Case</h3>
 
           <form id="reportForm">
-            <input class="form-control mb-3 dark-input" id="name" placeholder="Child Name" required>
-            <input class="form-control mb-3 dark-input" id="location" placeholder="Location" required>
+            <input class="form-control mb-3 dark-input " id="name" placeholder="Child Name" required>
+            <input class="form-control mb-3 dark-input" id="location" placeholder="Address" required>
             <textarea class="form-control mb-3 dark-input" id="details" placeholder="Details" rows="3" required></textarea>
 
-            <button class="btn btn-info w-100">Submit Report</button>
+            <button id="yash"class="btn btn-info w-100 ">Submit Registation</button>
           </form>
 
           <p id="message" class="text-center mt-3"></p>
@@ -73,11 +280,74 @@
     </div>
   </div>
 </section>
+<div class="modal" id="signupModal">
+  <div class="modal-box">
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <button>Register</button>
+    <span class="close">&times;</span>
+  </div>
+</div>
+
 
 <!-- FOOTER -->
-<footer class="footer text-center">
-  © 2025 Home For All | Child Rescue Project
-</footer>
+<section id="contact-us" class="footer-section">
+
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-about">
+      <div class="footer-logo">
+        <span class="heart">♥</span>
+        <h3 id="home-for-all">Home For All</h3>
+      </div>
+
+      <p>
+        Dedicated to rescuing orphaned children from the streets and
+        connecting them with loving orphanages across India.
+      </p>
+
+      <div class="social-icons">
+        <span>f</span>
+        <span>t</span>
+        <span>i</span>
+        <span>in</span>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4 id="home-for-all">Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about-us">About Us</a>
+      <a href="#how-we-help">How We Help</a>
+      <a href="#">Orphanages</a>
+      <a href="#contact-us">Contact Us</a>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="footer-links">
+      <h4 id="home-for-all">Resources</h4>
+      <a href="#">FAQs</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Volunteer</a>
+      <a href="#">Donate</a>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="footer-contact">
+      <h4 id="home-for-all">Contact Us</h4>
+      <p>📍 123 Charity Lane, Mumbai, Maharashtra 400001, India</p>
+      <p>📞 +91 123 456 7890</p>
+      <p>✉ info@homeforall.org</p>
+    </div>
+
+  </div>
+
+</section>
+
 
 <script src="script.js"></script>
 </body>
