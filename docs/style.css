@@ -652,3 +652,86 @@ textarea:focus {
 #home-for-all{
   font-family:inher;
 }
+/* ===== MOBILE NAVBAR FIX ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    display: none; /* hide menu links on mobile */
+  }
+
+  .signup-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+}
+/* ===== MOBILE HERO IMAGE FIX ===== */
+@media (max-width: 768px) {
+
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .hero-overlay {
+    padding: 100px 20px 60px;
+  }
+
+  .hero-section h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-section p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+/* ===== MOBILE HERO BUTTON FIX ===== */
+@media (max-width: 768px) {
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+/* ===== FIX ORPHANAGES CENTER ALIGNMENT ===== */
+.orphanages-section {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.orphanages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;          /* THIS CENTERS IT */
+  padding: 0 16px;        /* MOBILE SAFE PADDING */
+}
+.orphanage-card {
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .orphanages-grid {
+    grid-template-columns: 1fr;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
