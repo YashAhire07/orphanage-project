@@ -735,3 +735,59 @@ textarea:focus {
     padding-right: 16px;
   }
 }
+.signup-btn {
+  background: #e58b45;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-btn:hover {
+  background: #d97732;
+}
+/* ===== SOCIAL ICON LOGIN ===== */
+.social-icons-login {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.social-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  font-size: 50px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover effects */
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Brand colors on hover */
+.social-icon.google:hover {
+  color: #ea4335;
+  border-color: #ea4335;
+}
+
+.social-icon.linkedin:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+}
+
+.social-icon.github:hover {
+  color: #111827;
+  border-color: #111827;
+}

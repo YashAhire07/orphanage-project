@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+  <meta charset="UTF-8">
+  <title>Sign Up | Home For All</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f8fafc;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .signup-card {
+      background: #ffffff;
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .signup-card h2 {
+      font-family: 'Playfair Display', serif;
+      color: #111827;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .signup-card p {
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .signup-card input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #111827;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .signup-card input::placeholder {
+      color: #9ca3af;
+    }
+
+    .signup-card input:focus {
+      border-color: #e58b45;
+      box-shadow: 0 0 0 2px rgba(229,139,69,0.25);
+    }
+
+    .signup-card button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      background: #e58b45;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .signup-card button:hover {
+      background: #d97732;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(229,139,69,0.35);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link a:hover {
+      color: #e58b45;
+    }
+    body{
+      background-image:url(AdobeStock_1597781239_Preview.jpeg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-card">
+    <h2>Create Account</h2>
+    <p>Join Home For All and help rescue children</p>
+
+    <!-- ✅ FORM ADDED -->
+    <form id="signupForm">
+
+      <!-- ✅ IDs ADDED -->
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="password" id="password" placeholder="Password" required>
+
+      <!-- ✅ SUBMIT BUTTON -->
+      <button type="submit">Create Account</button>
+
+    </form>
+
+    <div class="social-divider">
+      <p>OR <span>sign in with</span></p>
+    </div>
+
+    <div class="social-icons-login">
+      <p>
+      <a href="https://accounts.google.com/v3/signin/accountchooser?client_id=388036620207-3uolk1hv6ta7p3r9l6s3bobifh086qe1.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fauthapi.geeksforgeeks.org%2Fgoogle-callback%2F&response_type=code&scope=openid+email+profile&state=7DXSGIVixS3SesbxdJIoVbgyfINigmF3u+th1AVomw84%2FZNF42xT8QyZJ4Q6lZ6Kql2xvCcNmMpWUZFzF0Ndg31GbaHlaImxdNiLP+PWiARJXFFrRjgC2mWm0h7%2FFpqc4zuVhxe+Ce3atltVN1Qr7NBnZdVNIljzEa48riBCF4c61G11j4eGOmlBofrhSCcNlPGUOkQSkX1CBootXKIMrzGiUnK+vt+VcsfCcJdz6biPxjxiN6yb3xDJS0lJ77zksZ4caqrb6I2E35Ckjuz9MSV63ZbQGyZWvagBd0SZbUuQ20FWTAg48+E1M5wdi+Hf8nfjqcY1guF9kpOal+0wFkh8DmlaTnvkCP3+pFAJ7l92PZBvGAM4g5sUI4mkNFXjKInvUXiePB4lpSA%2F5bbcVSSsGosStM9hQkZmcJdrOjo5A4Y5t4Ezbwi2BDIULJuoQJE2Za2wP68aAjvMGIMnhfFs51qyfmyY3wBtYJln7oPo5m%2FSZCOdNVsA67aagG6FiCVJzwvq0zKK%2FzOIJOfcGLhbMq+21O19fIC+hKc%3D&dsh=S-1274616185%3A1767674604557094&o2v=2&service=lso&flowName=GeneralOAuthFlow&opparams=%253F&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hANWAIRq-E_JkWqISliZK29Yx8V7pkiqi2byuhrH_mKg0yE_9KIG5oWGhEr45jd4C_Him3taYNFwyIOME-LNGLP65bFMoB_FM5aPr5eyRG1fSbaHf8AnvCGq5YOn_lUdAxyZ14PThWHAkxvM49xvym2iny35dhsWdUwcqsgUnJ3F1W3Oht7KvyB65RzRHlQFnozhuBn94gxApQ-gXQ6a9zkd38p7UtiE0avHHUcndo9cd3tXFojD56YIXJUGOAsL95qs6a3oWaLmczOilH0J_SmqI6YXqDF80iHMODv0gqYn4AIyjjKRY9Q4EBkvsGQYTYmNOtMbKG-isG54UbmyeG010bN119uFLtt3LgyDcnb5RJi2lkCrvMQxjFEVje4eeESMOXulXwJUCw8gB49aRUm3f1CFJvcSLOmXuFyFsCU1AxfqdHEzQ3KMI7om2JsdFHWYlKOmZCnmX8vu8gF7UW-vIUWhNeJ8F0urC3K_AM7sKzlcZFM%26flowName%3DGeneralOAuthFlow%26as%3DS-1274616185%253A1767674604557094%26client_id%3D388036620207-3uolk1hv6ta7p3r9l6s3bobifh086qe1.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fauthapi.geeksforgeeks.org" class="social-icon google"><i class="fab fa-google"></i></a>
+      <a href="https://www.linkedin.com/feed/" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/" class="social-icon github"><i class="fab fa-github"></i></a>
+       </p>   
+    </div>
+
+    <div class="back-link">
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </div>
+
+
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("signupForm");
+
+      if (!form) {
+        console.error("signupForm not found");
+        return;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const res = await fetch("http://localhost:5000/api/auth/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+  alert("Account created successfully. Please login.");
+  window.location.href = "login.html";
+}else {
+          alert(data.message);
+        }
+      });
+    });
+  </script>
+
+</body>
+
+
+</html>

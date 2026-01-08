@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Child</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+    }
+
+    .navbar {
+      background: #f97316;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar button {
+      background: white;
+      color: #f97316;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card {
+      background: white;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background: #f97316;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #ea580c;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <h2>Home For All</h2>
+  <div>
+    <span id="userEmail"></span>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<!-- CARD -->
+<div class="card">
+  <h2>Register Child</h2>
+
+  <form id="reportForm">
+    <input id="name" placeholder="Child Name" required>
+    <input id="location" placeholder="Location Found" required>
+    <textarea id="details" placeholder="Details" required></textarea>
+    <button type="submit">Submit Report</button>
+  </form>
+
+  <div id="myReport"></div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ✅ TOKEN CHECK
+  const token = localStorage.getItem("token");
+
+  if (!token || token === "undefined" || token.split(".").length !== 3) {
+    localStorage.clear();
+    window.location.href = "login.html";
+    return;
+  }
+
+  // ✅ SAFE TOKEN DECODE
+  let payload;
+  try {
+    payload = JSON.parse(atob(token.split(".")[1]));
+  } catch (err) {
+    alert("Session expired. Please login again.");
+    localStorage.clear();
+    window.location.href = "login.html";
+    return;
+  }
+
+  document.getElementById("userEmail").innerText = payload.email;
+
+  const form = document.getElementById("reportForm");
+  const reportBox = document.getElementById("myReport");
+
+  // ✅ LOAD USER REPORT (SAFE)
+  async function loadMyReport() {
+    const res = await fetch("http://localhost:5000/api/reports/my", {
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    });
+
+    if (!res.ok) {
+      // route not found or server error → just skip
+      return;
+    }
+
+    const data = await res.json();
+
+    if (data.length > 0) {
+      form.style.display = "none";
+      const r = data[0];
+
+      reportBox.innerHTML = `
+        <h3>Your Submitted Report</h3>
+        <p><b>Name:</b> ${r.name}</p>
+        <p><b>Location:</b> ${r.location}</p>
+        <p><b>Details:</b> ${r.details}</p>
+        <p><b>Status:</b> ${r.status}</p>
+      `;
+    }
+  }
+
+  // ✅ SUBMIT REPORT
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("http://localhost:5000/api/reports", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token
+      },
+      body: JSON.stringify({
+        name: document.getElementById("name").value,
+        location: document.getElementById("location").value,
+        details: document.getElementById("details").value
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || "Failed to submit report");
+      return;
+    }
+
+    alert("Report submitted successfully");
+    loadMyReport();
+  });
+
+  loadMyReport();
+});
+
+// ✅ LOGOUT
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

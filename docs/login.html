@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <title>Login</title>
+  <style>
+    body {
+      background: #f9fafb;
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #f97316;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ea580c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Login</h2>
+
+  <form id="loginForm">
+    <input id="email" placeholder="Email" required>
+    <input id="password" type="password" placeholder="Password" required>
+    <button>Login</button>
+  </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("loginForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const res = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value
+      })
+    });
+    const data = await res.json();
+    if (!res.ok) return alert(data.message);
+    localStorage.setItem("token", data.token);
+    if (!data.token || data.token.split(".").length !== 3) {
+  alert("Invalid token received");
+  return;
+}
+
+
+    window.location.href = data.role === "admin" ? "admin.html" : "register-child.html";
+  });
+});
+</script>
+
+</body>
+</html>
