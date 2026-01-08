@@ -144,7 +144,6 @@
       <a href="index.html">← Back to Home</a>
     </div>
   </div>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("signupForm");
@@ -152,18 +151,16 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     try {
       const res = await fetch(
         "https://child-rescue-backend.onrender.com/api/auth/signup",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, password })
         }
       );
@@ -185,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-
 
 </body>
 

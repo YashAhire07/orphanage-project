@@ -52,14 +52,10 @@
     <input id="password" type="password" placeholder="Password" required>
     <button>Login</button>
   </form>
-</div>
-<script>
+</div><script>
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  document.getElementById("loginForm").addEventListener("submit", async e => {
     e.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
 
     try {
       const res = await fetch(
@@ -67,7 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password })
+          body: JSON.stringify({
+            email: email.value,
+            password: password.value
+          })
         }
       );
 
@@ -79,20 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       localStorage.setItem("token", data.token);
-
       window.location.href =
-        data.role === "admin"
-          ? "admin.html"
-          : "register-child.html";
+        data.role === "admin" ? "admin.html" : "register-child.html";
 
     } catch (err) {
       alert("Server not reachable");
-      console.error(err);
     }
   });
 });
 </script>
-
 
 </body>
 </html>
