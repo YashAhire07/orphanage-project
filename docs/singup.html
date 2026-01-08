@@ -145,40 +145,47 @@
     </div>
   </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("signupForm");
 
-   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("signupForm");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      if (!form) {
-        console.error("signupForm not found");
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    try {
+      const res = await fetch(
+        "https://child-rescue-backend.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ name, email, password })
+        }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || "Signup failed");
         return;
       }
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+      alert("Account created successfully. Please login.");
+      window.location.href = "login.html";
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+    } catch (err) {
+      alert("Server not reachable");
+      console.error(err);
+    }
+  });
+});
+</script>
 
-        const res = await fetch("http://localhost:5000/api/auth/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, password })
-        });
-
-        const data = await res.json();
-
-        if (data.success) {
-  alert("Account created successfully. Please login.");
-  window.location.href = "login.html";
-}else {
-          alert(data.message);
-        }
-      });
-    });
-  </script>
 
 </body>
 

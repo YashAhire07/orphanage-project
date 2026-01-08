@@ -53,32 +53,46 @@
     <button>Login</button>
   </form>
 </div>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("loginForm").addEventListener("submit", async e => {
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email.value,
-        password: password.value
-      })
-    });
-    const data = await res.json();
-    if (!res.ok) return alert(data.message);
-    localStorage.setItem("token", data.token);
-    if (!data.token || data.token.split(".").length !== 3) {
-  alert("Invalid token received");
-  return;
-}
 
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-    window.location.href = data.role === "admin" ? "admin.html" : "register-child.html";
+    try {
+      const res = await fetch(
+        "https://child-rescue-backend.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || "Login failed");
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+
+      window.location.href =
+        data.role === "admin"
+          ? "admin.html"
+          : "register-child.html";
+
+    } catch (err) {
+      alert("Server not reachable");
+      console.error(err);
+    }
   });
 });
 </script>
+
 
 </body>
 </html>
