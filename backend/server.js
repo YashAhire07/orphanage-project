@@ -3,24 +3,33 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require("path");
 
 const app = express();
 
-app.use(cors());
+// ✅ CORS FIX (IMPORTANT)
+app.use(cors({
+  origin: [
+    "https://yashahire07.github.io",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 
-// ✅ Serve frontend files
-app.use("/docs", express.static(path.join(__dirname, "../docs")));
-
+// ✅ MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("MongoDB error:", err));
 
+// ✅ Routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/reports", require("./routes/reportRoutes"));
 
-const PORT = process.env.PORT || 5000;
+// ✅ Port (Render)
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log("Server running on port", PORT);
 });
